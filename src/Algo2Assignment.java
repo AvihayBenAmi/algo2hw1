@@ -89,6 +89,38 @@ public class Algo2Assignment {
         }
         return new int[]{farthestNode, maxDist};
     }
+    // -- שאלה 2: קוטר של עץ --
+    public static int findTreeDiameter(List<List<Integer>> tree) {
+        int farthest = bfsTree(tree, 0)[0]; // שלב ראשון
+        int[] res = bfsTree(tree, farthest); // שלב שני
+        return res[1]; // הקוטר
+    }
+
+    private static int[] bfsTree(List<List<Integer>> tree, int start) {
+        int n = tree.size();
+        int[] dist = new int[n];
+        Arrays.fill(dist, -1);
+
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(start);
+        dist[start] = 0;
+
+        int farthestNode = start, maxDist = 0;
+        while (!queue.isEmpty()) {
+            int u = queue.poll();
+            for (int v : tree.get(u)) {
+                if (dist[v] == -1) {
+                    dist[v] = dist[u] + 1;
+                    queue.add(v);
+                    if (dist[v] > maxDist) {
+                        maxDist = dist[v];
+                        farthestNode = v;
+                    }
+                }
+            }
+        }
+        return new int[]{farthestNode, maxDist};
+    }
 
     // -- שאלה 3: קישוריות חזקת --
     public static boolean isStronglyConnected(List<List<Integer>> graph) {
