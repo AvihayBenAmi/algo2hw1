@@ -56,103 +56,7 @@ public class Algo2Assignment {
         }
         return dist;
     }
-    // -- שאלה 2: קוטר של עץ --
-    public static int findTreeDiameter(List<List<Integer>> tree) {
-        int farthest = bfsTree(tree, 0)[0]; // שלב ראשון
-        int[] res = bfsTree(tree, farthest); // שלב שני
-        return res[1]; // הקוטר
-    }
 
-    private static int[] bfsTree(List<List<Integer>> tree, int start) {
-        int n = tree.size();
-        int[] dist = new int[n];
-        Arrays.fill(dist, -1);
-
-        Queue<Integer> queue = new LinkedList<>();
-        queue.add(start);
-        dist[start] = 0;
-
-        int farthestNode = start, maxDist = 0;
-        while (!queue.isEmpty()) {
-            int u = queue.poll();
-            for (int v : tree.get(u)) {
-                if (dist[v] == -1) {
-                    dist[v] = dist[u] + 1;
-                    queue.add(v);
-                    if (dist[v] > maxDist) {
-                        maxDist = dist[v];
-                        farthestNode = v;
-                    }
-                }
-            }
-        }
-        return new int[]{farthestNode, maxDist};
-    }
-
-    // -- שאלה 2: קוטר של עץ --
-    public static int findTreeDiameter(List<List<Integer>> tree) {
-        int farthest = bfsTree(tree, 0)[0]; // שלב ראשון
-        int[] res = bfsTree(tree, farthest); // שלב שני
-        return res[1]; // הקוטר
-    }
-
-    private static int[] bfsTree(List<List<Integer>> tree, int start) {
-        int n = tree.size();
-        int[] dist = new int[n];
-        Arrays.fill(dist, -1);
-
-        Queue<Integer> queue = new LinkedList<>();
-        queue.add(start);
-        dist[start] = 0;
-
-        int farthestNode = start, maxDist = 0;
-        while (!queue.isEmpty()) {
-            int u = queue.poll();
-            for (int v : tree.get(u)) {
-                if (dist[v] == -1) {
-                    dist[v] = dist[u] + 1;
-                    queue.add(v);
-                    if (dist[v] > maxDist) {
-                        maxDist = dist[v];
-                        farthestNode = v;
-                    }
-                }
-            }
-        }
-        return new int[]{farthestNode, maxDist};
-    }
-     // -- שאלה 2: קוטר של עץ --
-    public static int findTreeDiameter(List<List<Integer>> tree) {
-        int farthest = bfsTree(tree, 0)[0]; // שלב ראשון
-        int[] res = bfsTree(tree, farthest); // שלב שני
-        return res[1]; // הקוטר
-    }
-
-    private static int[] bfsTree(List<List<Integer>> tree, int start) {
-        int num = tree.size();
-        int[] dist = new int[num];
-        Arrays.fill(dist, -1);
-
-        Queue<Integer> queue = new LinkedList<>();
-        queue.add(start);
-        dist[start] = 0;
-
-        int farthestNode = start, maxDist = 0;
-        while (!queue.isEmpty()) {
-            int u = queue.poll();
-            for (int v : tree.get(u)) {
-                if (dist[v] == -1) {
-                    dist[v] = dist[u] + 1;
-                    queue.add(v);
-                    if (dist[v] > maxDist) {
-                        maxDist = dist[v];
-                        farthestNode = v;
-                    }
-                }
-            }
-        }
-        return new int[]{farthestNode, maxDist};
-    }
     // -- שאלה 3: קישוריות חזקת --
     public static boolean isStronglyConnected(List<List<Integer>> graph) {
         int n = graph.size();
@@ -218,8 +122,8 @@ public class Algo2Assignment {
         tree.get(3).add(1);
         tree.get(3).add(4);
         tree.get(4).add(3);
-        int diameter = findTreeDiameter(tree);
-        System.out.println("שאלה 2 - קוטר העץ: " + diameter);
+        //int diameter = findTreeDiameter(tree);
+        //System.out.println("שאלה 2 - קוטר העץ: " + diameter);
 
         // דוגמה לשאלה 3:
         List<List<Integer>> graph = new ArrayList<>();
