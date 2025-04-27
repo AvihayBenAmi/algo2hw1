@@ -168,3 +168,4 @@ public class Algo2Assignment {
         System.out.println("שאלה 3 - האם הגרף קשיר חזק: " + stronglyConnected);
     }
 }
+//modification
