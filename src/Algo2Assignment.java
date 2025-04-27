@@ -153,8 +153,8 @@ public class Algo2Assignment {
         tree.get(3).add(1);
         tree.get(3).add(4);
         tree.get(4).add(3);
-        //int diameter = findTreeDiameter(tree);
-        //System.out.println("שאלה 2 - קוטר העץ: " + diameter);
+        int diameter = findTreeDiameter(tree);
+        System.out.println("שאלה 2 - קוטר העץ: " + diameter);
 
         // דוגמה לשאלה 3:
         List<List<Integer>> graph = new ArrayList<>();
