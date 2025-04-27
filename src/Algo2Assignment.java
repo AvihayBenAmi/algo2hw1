@@ -6,10 +6,14 @@ public class Algo2Assignment {
     // -- שאלה 1: רובוטים על לוח --
     static class Point {
         int x, y;
-        Point(int x, int y) { this.x = x; this.y = y; }
+
+        Point(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
     }
 
-    static int[][] directions = {{1,0},{-1,0},{0,1},{0,-1}}; // למטה, למעלה, ימין, שמאל
+    static int[][] directions = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}}; // למטה, למעלה, ימין, שמאל
 
     public static Point findOptimalCell(char[][] grid, List<Point> robots) {
         int n = grid.length;
@@ -56,6 +60,7 @@ public class Algo2Assignment {
         }
         return dist;
     }
+
     // -- שאלה 2: קוטר של עץ --
     public static int findTreeDiameter(List<List<Integer>> tree) {
         int farthest = bfsTree(tree, 0)[0]; // שלב ראשון
@@ -88,6 +93,7 @@ public class Algo2Assignment {
         }
         return new int[]{farthestNode, maxDist};
     }
+
     // -- שאלה 3: קישוריות חזקת --
     public static boolean isStronglyConnected(List<List<Integer>> graph) {
         int n = graph.size();
