@@ -65,8 +65,8 @@ public class Algo2Assignment {
     }
 
     private static int[] bfsTree(List<List<Integer>> tree, int start) {
-        int n = tree.size();
-        int[] dist = new int[n];
+        int num = tree.size();
+        int[] dist = new int[num];
         Arrays.fill(dist, -1);
 
         Queue<Integer> queue = new LinkedList<>();
