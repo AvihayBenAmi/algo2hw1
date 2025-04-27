@@ -136,40 +136,6 @@ public class Algo2Assignment {
         return reversed;
     }
 
-    // -- פונקציית MAIN עם דוגמאות --
-    public static void main(String[] args) {
-        // דוגמה לשאלה 1:
-        char[][] grid = {
-                {'W', 'B', 'W'},
-                {'W', 'W', 'B'},
-                {'B', 'W', 'W'}
-        };
-        List<Point> robots = Arrays.asList(new Point(0,0), new Point(1,1));
-        Point optimal = findOptimalCell(grid, robots);
-        System.out.println("שאלה 1 - המשבצת האופטימלית: (" + optimal.x + ", " + optimal.y + ")");
 
-        // דוגמה לשאלה 2:
-        List<List<Integer>> tree = new ArrayList<>();
-        for (int i = 0; i < 5; i++) tree.add(new ArrayList<>());
-        tree.get(0).add(1);
-        tree.get(1).add(0);
-        tree.get(1).add(2);
-        tree.get(2).add(1);
-        tree.get(1).add(3);
-        tree.get(3).add(1);
-        tree.get(3).add(4);
-        tree.get(4).add(3);
-        int diameter = findTreeDiameter(tree);
-        System.out.println("שאלה 2 - קוטר העץ: " + diameter);
-
-        // דוגמה לשאלה 3:
-        List<List<Integer>> graph = new ArrayList<>();
-        for (int i = 0; i < 3; i++) graph.add(new ArrayList<>());
-        graph.get(0).add(1);
-        graph.get(1).add(2);
-        graph.get(2).add(0);
-        boolean stronglyConnected = isStronglyConnected(graph);
-        System.out.println("שאלה 3 - האם הגרף קשיר חזק: " + stronglyConnected);
-    }
 }
 //modification
