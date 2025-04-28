@@ -95,34 +95,35 @@ public class Algo2Assignment {
     }
 
     // -- שאלה 3: קישוריות חזקת --
-    public static boolean isStronglyConnected(List<List<Integer>> graph) {
-        int n = graph.size();
-        if (!canReachAll(graph, 0)) return false;
+    public static boolean isStronglyConnected(List<List<Integer>> graph){
+        int x =graph.size();
+    if (!canReachAll(graph,0))
+        return false;
 
-        List<List<Integer>> reversed = reverseGraph(graph);
-        return canReachAll(reversed, 0);
+    List<List<Integer>> reversed =reverseGraph(graph);
+    return canReachAll(reversed,0);
     }
 
-    private static boolean canReachAll(List<List<Integer>> graph, int start) {
-        int n = graph.size();
-        boolean[] visited = new boolean[n];
-        Queue<Integer> queue = new LinkedList<>();
-        queue.add(start);
-        visited[start] = true;
 
-        while (!queue.isEmpty()) {
-            int u = queue.poll();
-            for (int v : graph.get(u)) {
-                if (!visited[v]) {
-                    visited[v] = true;
-                    queue.add(v);
-                }
-            }
-        }
-        for (boolean v : visited)
-            if (!v) return false;
-        return true;
-    }
+  private static boolean canReachAll(List<List<Integer>> graph, int start) {
+      int x = graph.size();
+      boolean[] visited = new boolean[x];
+      Queue<Integer> queue = new LinkedList<>();
+      queue.add(start);
+      visited[start] = true;
+      while (!queue.isEmpty()) {
+          int u = queue.poll();
+          for (int v : graph.get(u)) {
+              if (!visited[v]) {
+                  visited[v] = true;
+                  queue.add(v);
+              }
+          }
+      }
+      for (boolean v : visited)
+          if (!v)return false;
+          return true;
+  }
 
     private static List<List<Integer>> reverseGraph(List<List<Integer>> graph) {
         int n = graph.size();
